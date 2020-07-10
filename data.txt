@@ -10,3 +10,4 @@ pip3 install django
 django-admin startproject PROJECT_NAME
 python manage.py runserver
 pyhton manage.py startapp hello
+python manage.py migrate (session)
