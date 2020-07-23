@@ -9,7 +9,7 @@ architetctural pattern**
 
 ``Let's Code!``
 
-###Basic
+### Basic
 
 * django-admin startproject <name-project>
 > Start a new project in the django 
@@ -21,9 +21,11 @@ architetctural pattern**
 * py manage.py migrate
 * py manage.py shell
 > from <app>.models import <model_name>
-> <model.objects.all()>
-> <model.objects.filter(param)>
-> <model.objects.first()>
-> <model.objects.last()>
+  
+``model.objects.all()``
+``model.objects.filter(param)``
+``model.objects.first()``
+``model.objects.last()``
+
 * py manage.py createsuperuser
 
