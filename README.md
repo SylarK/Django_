@@ -21,11 +21,18 @@ architetctural pattern**
 * py manage.py migrate
 * py manage.py shell
 > from <app>.models import <model_name>
-  
+> <var>.<app>_set.all()     -> Quando existe uma relação utilizando **fk**
+> <var>.<app>_set.create(name='name')
+> <var>.<app>_set.count()
+
+
+
 ``model.objects.all()``
 ``model.objects.filter(param)``
 ``model.objects.first()``
 ``model.objects.last()``
 
 * py manage.py createsuperuser
+
+
 
