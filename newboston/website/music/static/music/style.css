@@ -1,4 +1,13 @@
 body{
-
+    padding: 0px;
+    margin: 0px;
     background: whitesmoke;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.navbar-brand{
+    font-family: 'Satisfy',cursive;
 }

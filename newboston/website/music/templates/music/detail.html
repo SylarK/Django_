@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'music/base.html' %}
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail</title>
-
-</head>
-
-<body>
+{% block body %}
     
     <img style="width: 300px; height: auto;" src="{{ album.album_logo }}">
 
@@ -37,5 +29,4 @@
 
     <button><a style="color: black; text-decoration: none;" href="{% url 'index' %}">Return</a></button>
 
-</body>
-</html>
+{% endblock %}
