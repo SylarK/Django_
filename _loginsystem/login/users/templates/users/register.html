@@ -1,0 +1,16 @@
+<h2>Register</h2>
+
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        {% if forms.error %}
+            <p>There are something wrong with this form.</p>
+        {% endif %}
+        <p><input type="text" name="username" placeholder="Username"></p>
+        <p><input type="password" name="password" placeholder="Password"></p>
+
+        <button type="submit">Submit</button>
+
+
+    </form>
+
+<br><br><a href="{% url 'index' %}">Return</a>

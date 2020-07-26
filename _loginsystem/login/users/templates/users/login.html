@@ -1,0 +1,29 @@
+<h3>Login</h3>
+
+{% if user_add %}
+
+    <h3>Welcome {{ user_add.name }} </h3>
+
+{% else %}
+
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {% if forms.error %}
+            <p>There are something wrong with this form.</p>
+        {% endif %}
+        {% if msg %}
+            <p>{{ msg }}</p>
+        {% endif %}
+        <p><input type="text" name="username" placeholder="Username"></p>
+        <p><input type="password" name="password" placeholder="Password"></p>
+
+        <button type="submit">Submit</button>
+
+
+
+    </form>
+
+{% endif %}
+
+
+<br><br><a href="{% url 'index' %}">Return</a>
