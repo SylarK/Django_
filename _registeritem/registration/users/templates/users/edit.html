@@ -1,1 +1,37 @@
 <h3>Edit page</h3>
+
+{% if product %}
+
+    <form method='post' action="{% url 'edit' product.id %}">
+        {% csrf_token %}
+
+        {% if form_errors %}
+            <p>Something is wrong. Contact the support.</p>
+        {% endif %}
+
+        <label>Name: </label>
+        <input type="text" maxlength="100" name="name_product" value="{{ product.name }}">
+        <p>
+            <label>Value: </label>
+            <input type="number" name="value_product" value="{{ product.value }}">
+        </p>    
+        <p>
+            <label>Validate: </label>
+            <input type="date" name="validate_product" value="{{ product.validate }}">
+        </p>
+        <p>
+            <label>URL img: </label>
+            <input type="text" maxlength='500' name="url_img_product" value="{{ product.img }}">
+        </p>
+
+        <input type="submit" value="Edit">
+
+    </form>
+
+{% else %}
+
+    <p>Something is wrong. You don't choose a product.</p>
+
+{% endif %}
+
+<p><a href="{% url 'index' %}">Return</a></p>

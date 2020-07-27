@@ -18,7 +18,7 @@
 >   Imagem (URL)
 
 - [x]   O usuário deverá ser capaz de visualizar a lista de produtos na tela inicial
-- [ ]   O usuário deverá ser capaz de editar os produtos da lista
+- [x]   O usuário deverá ser capaz de editar os produtos da lista
 
 
 **A aplicação atual focará na lógica de programação em si, não sendo o enfoque a perfeita estilização neste momento**

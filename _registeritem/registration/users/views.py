@@ -56,4 +56,20 @@ def erase(request, produto_id):
 
 def edit(request, produto_id):
 
-    return render(request, 'users/edit.html')
+    if request.method == 'POST':
+
+        name = request.POST['name_product']
+        value = request.POST['value_product']
+        validate = request.POST['validate_product']
+        img = request.POST['url_img_product']
+
+        editProduct = Produto(name=name, value=value, validate=validate, img=img)
+        editProduct.save()
+
+        return redirect('index')
+    
+    else:
+
+        product = Produto.objects.get(id=produto_id)
+
+        return render(request, 'users/edit.html', {'product':product})
