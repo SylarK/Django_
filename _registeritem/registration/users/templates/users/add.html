@@ -1,0 +1,29 @@
+<h3>Add a new Product</h3>
+
+<p> {{ msg }}</p>
+
+<form method='post' action="{% url 'add' %}">
+        {% csrf_token %}
+
+        {% if form_errors %}
+            <p>Something is wrong. Contact the support.</p>
+        {% endif %}
+
+        <label>Name: </label>
+        <input type="text" maxlength="100" name="name_product">
+        <p>
+            <label>Value: </label>
+            <input type="number" name="value_product">
+        </p>
+        <p>
+            <label>Validate: </label>
+            <input type="date" name="validate_product">
+        </p>
+        <p>
+            <label>URL img: </label>
+            <input type="text" maxlength='500' name="url_img_product">
+        </p>
+
+        <input type="submit" value="Add">
+
+</form>
