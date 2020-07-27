@@ -63,7 +63,7 @@ def edit(request, produto_id):
         validate = request.POST['validate_product']
         img = request.POST['url_img_product']
 
-        editProduct = Produto(name=name, value=value, validate=validate, img=img)
+        editProduct = Produto(id=produto_id, name=name, value=value, validate=validate, img=img)
         editProduct.save()
 
         return redirect('index')

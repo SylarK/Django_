@@ -14,6 +14,7 @@
         </tr>
         {% for item in list_view %}
         <tr>
+            <td><img src="{{ item.img }}" alt="" style="width: 150px; height: auto;"></td>
             <td>{{ item.name }}</td>
             <td>{{ item.value }}</td>
             <td>{{ item.validate }}</td>
