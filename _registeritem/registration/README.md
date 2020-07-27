@@ -9,8 +9,11 @@
 - [x]   O produto terá (criação de classe):
 
 >   Nome (max_length:100)
+
 >   Validade
+
 >   Preço
+
 >   Imagem (URL)
 
 - [ ]   O usuário deverá ser capaz de visualizar a lista de produtos 
