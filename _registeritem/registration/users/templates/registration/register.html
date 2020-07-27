@@ -1,0 +1,17 @@
+<h3>Register page</h3>
+
+<form method="post" action="{% url 'register' %}">
+    {% csrf_token %}
+
+    {% if form_errors %}
+        <p>Something is wrong with this form. Please, contact the support or try again.</p>
+    {% endif %}
+    
+    <p><label>Username: </label>{{ form.username }}</p>
+    <p><label>Password: </label>{{ form.password1 }}</p>
+    <p><label>Confirm your password: </label>{{ form.password2 }}</p>
+
+    <input type="submit" value="Register">
+
+
+</form>
