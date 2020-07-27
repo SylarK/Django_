@@ -1,0 +1,19 @@
+<h3>Login page</h3>
+
+<form action="{% url 'login' %}" method="post">
+
+    {% csrf_token %}
+    {% if form_errors %}
+            <p>There are errors in this form.</p>
+    {% endif %}
+    {% if next %}
+            <p>Sorry, but you do not have access for this page.</p>
+    {% endif %}
+
+    <p><label>Username: </label> {{ form.username }}</p>
+    <p><label>Password: </label> {{ form.password }}</p>
+
+    <input type="submit" value="Login">
+    <input type="hidden" name="next" value="{{ next }}">
+
+</form>

@@ -4,6 +4,7 @@
 
 *   Criação de usuário (utilizando django.auth)
 *   Diferenciação entre usuário normal e usuário com privilégios de administrador
+*   Tela de login
 *   Usuário poderá realizar o cadastro de itens no sistema
 *   O item terá:
 
@@ -18,3 +19,4 @@
 **A aplicação atual focará na lógica de programação em si, não sendo o enfoque a perfeita estilização neste momento**
 
 `` Superuser-username: groot / Superuser-password: admin``
+`` users_test-username : user** / users_test-password: year2020 ``
