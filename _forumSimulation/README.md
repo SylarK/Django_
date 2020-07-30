@@ -4,14 +4,22 @@
 
 ##### Planner: 
 
-[ ] Configuração do ambiente
+[x] Configuração do ambiente
+
 [ ] Criação de usuário adm
+
 [ ] Sistema de autenticação
+
 [ ] Criação de classes BD (post, comment)
+
 [ ] Implementação de dados no front
+
 [ ] Criação de layout
+
 [ ] Redefinição de estilização
+
 [ ] Teste do Projeto
+
 [ ] Projeto Concluído
 
 
