@@ -6,11 +6,11 @@
 
 [x] Configuração do ambiente
 
-[ ] Criação de usuário adm
+[ ] Criação de classes BD (post, comment)
 
 [ ] Sistema de autenticação
 
-[ ] Criação de classes BD (post, comment)
+[x] Criação de usuário adm
 
 [ ] Implementação de dados no front
 
