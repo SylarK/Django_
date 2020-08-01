@@ -6,9 +6,9 @@
 
 [x] Configuração do ambiente
 
-[ ] Criação de classes BD (post, comment)
+[x] Criação de classes BD (post, comment)
 
-[ ] Sistema de autenticação (Login, logout, auth)
+[x] Sistema de autenticação (Login, logout, auth)
 
 [x] Criação de usuário adm
 

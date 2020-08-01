@@ -9,3 +9,9 @@ def logout(requet):
 
 def welcome(request):
     return render(request, 'interface/welcome.html')
+
+def mypost(request):
+    return render(request, 'interface/manange.html')
+
+def newpost(request):
+    return render(request, 'interface/newpost.html')
