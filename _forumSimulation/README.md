@@ -8,7 +8,7 @@
 
 [ ] Criação de classes BD (post, comment)
 
-[ ] Sistema de autenticação
+[ ] Sistema de autenticação (Login, logout, auth)
 
 [x] Criação de usuário adm
 
@@ -29,3 +29,10 @@
 * Fórum - entries
 * Fórum - interface
 
+##### Usuários:
+
+> admin:year2020
+> user01:year2020
+> user02:year2020
+> user03:year2020
+> user04:year2020

@@ -1,5 +1,11 @@
-from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.shortcuts import render, HttpResponseRedirect
+from django.contrib.auth import authenticate, login, logout
 
 def index(request):
-    return render(request, 'interface/index.html', )
+    return HttpResponseRedirect('/accounts/login')
+
+def logout(requet):
+    logout(request)
+
+def welcome(request):
+    return render(request, 'interface/welcome.html')

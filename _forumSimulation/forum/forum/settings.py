@@ -121,4 +121,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/interface'
+LOGIN_REDIRECT_URL = '/interface/welcome'
+LOGOUT_REDIRECT_URL = '/interface/welcome'
