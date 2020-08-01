@@ -1,21 +1,14 @@
-{% load static %}
+{% extends "interface/layout.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% block title %}
+    Home
+{% endblock %}
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface</title>
-    <link rel='stylesheet' href='{% static "interface/style.css" %}'>
-    
+{% block body %}
 
-</head>
-<body>
-    
     {% if user.is_authenticated %}
-        <h4>Welcome {{ user }} </h4>
-
+        <h4>Welcome, {{ user }} </h4>
+        <p>{{ user.id }}</p>
         <table width='100%'>
             <tr>
                 <th>Title</th>
@@ -23,12 +16,28 @@
                 <th>Created at</th>
             </tr>
 
+            {% if list_post %}
+
+                {% for item in list_post %}
+                    <tr>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.user }}</td>
+                        <td>{{ item.created_at }}</td>
+                    </tr>
+                {% endfor %}
+                    
+            {% else %}
+
+                <p>This content is empty</p>
+
+            {% endif %}
+
 
 
         </table>
-
+        <br>
         <p><a href="{% url 'interface:newpost'%}">New Post</a></p>
-        <p><a href="{% url 'interface:mypost' %}">Manage post</a></p>
+        <p><a href="{% url 'interface:mypost' user.id %}">Manage post</a></p>
         <p><a href="{% url 'logout' %}">Logout</a></p>
         
 
@@ -37,5 +46,4 @@
         <a href="{% url 'interface:index' %}">Log in</a>
     {% endif %}
 
-</body>
-</html>
+{% endblock %}

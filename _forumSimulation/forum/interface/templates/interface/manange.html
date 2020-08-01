@@ -1,1 +1,36 @@
-<h2>Manage page!</h2>
+{% extends "interface/layout.html" %}
+
+{% block title %}
+    Manange posts
+{% endblock %}
+
+{% block body %}
+    <h2>Manange page.</h2>
+
+    <table>
+
+        {% if list_post %}
+            <tr>
+                <th>Nº</th>
+                <th>User</th>
+                <th>Title</th>
+                <th>Created at</th>
+            </tr>
+            {% for item in list_post %}
+                <tr>
+                    <th>{{ item.id }}</th>
+                    <th>{{ item.user }}</th>
+                    <th>{{ item.title }}</th>
+                    <th>{{ item.created_at }}</th>
+                </tr>
+            {% endfor %}
+        
+        {% else %}
+            <p>This user not have any posts.</p>
+        {% endif %}
+        
+        
+    </table>
+
+    <p><a href="{% url 'interface:welcome' %}">Return</a></p>
+{% endblock %}

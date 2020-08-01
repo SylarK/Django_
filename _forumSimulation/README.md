@@ -12,7 +12,11 @@
 
 [x] Criação de usuário adm
 
+[x] Layout básico
+
 [ ] Implementação de dados no front
+
+[ ] Funcionalidade: Adicionar post, gerenciar post.
 
 [ ] Criação de layout
 
