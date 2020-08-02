@@ -5,11 +5,13 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Manange page.</h2>
 
-    <table>
+    {% if user.is_authenticated %}
+
+        <h2>Manange page.</h2>
 
         {% if list_post %}
+        <table>
             <tr>
                 <th>Nº</th>
                 <th>User</th>
@@ -22,15 +24,26 @@
                     <th>{{ item.user }}</th>
                     <th>{{ item.title }}</th>
                     <th>{{ item.created_at }}</th>
+                    <th><a href="{% url 'interface:edit' item.id %}">Edit</a></th>
+                    <th><a href="{% url 'interface:erase' item.id %}">Erase</a></th>
                 </tr>
             {% endfor %}
-        
+                       
+            
+        </table>
+
+            
+
+
         {% else %}
-            <p>This user not have any posts.</p>
+
         {% endif %}
-        
-        
-    </table>
+    
+    {% else %}
+
+        <p> User is not authenticated</p>
+
+    {% endif %}
 
     <p><a href="{% url 'interface:welcome' %}">Return</a></p>
 {% endblock %}

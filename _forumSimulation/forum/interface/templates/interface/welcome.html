@@ -8,7 +8,6 @@
 
     {% if user.is_authenticated %}
         <h4>Welcome, {{ user }} </h4>
-        <p>{{ user.id }}</p>
         <table width='100%'>
             <tr>
                 <th>Title</th>
@@ -20,7 +19,7 @@
 
                 {% for item in list_post %}
                     <tr>
-                        <td>{{ item.title }}</td>
+                        <td><a href="{% url 'interface:post' %}"> {{ item.title }} </a></td>
                         <td>{{ item.user }}</td>
                         <td>{{ item.created_at }}</td>
                     </tr>

@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block body %}
+
     {% if form.errors %}
         <p>Something is wrong with this form.</p>
     {% endif %}
@@ -23,5 +24,6 @@
         <input type="hidden" name="next" value="{{ next }}">
 
     </form>
+
 
 {% endblock %}
