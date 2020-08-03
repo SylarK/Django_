@@ -1,5 +1,6 @@
 {% extends "../interface/layout.html" %}
 
+
 {% block title %}
    Login
 {% endblock %}
@@ -12,18 +13,48 @@
     {% if next %}
         <p>You don't have access for this page.</p>
     {% endif %}
+    <div class="container">
 
-    <form method="post" action="{% url 'login' %}">
+        <div class="card text-center " >
 
-        {% csrf_token %}
+            <div class="card-header">
+            LOG IN
+            </div>
 
-        <p>Username : {{ form.username }}</p>
-        <p>Password : {{ form.password }}</p>
+            <div class="card-body" >
+                <form method="post" action="{% url 'login' %}">
 
-        <input type="submit" value="Login">
-        <input type="hidden" name="next" value="{{ next }}">
+                    {% csrf_token %}
+                    
+                    <div class="input-group">
 
-    </form>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" class="span-login">User</span>
+                        </div>
+                        <input class="form-control" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+                    </div>
+                    
+                    <div class="input-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Password</span>
+                        </div>
+                        <input class="form-control" type="password" name="password" autocomplete="current-password" required="" id="id_password">
+
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success" style="margin: 5px;" >Login</button>
+                    <input type="hidden" name="next" value="{{ next }}">
+        
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+        
 
 
 {% endblock %}

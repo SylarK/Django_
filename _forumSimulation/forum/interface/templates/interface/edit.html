@@ -20,11 +20,11 @@
             <textarea class="form-control" name="text" rows="5">{{ item.text }}</textarea>
         </div>
 
-        <button type="submit" class="btn btn-dark">Submit</button>
-
+        <button type="submit" class="btn btn-dark btn-sm">Submit</button>
+        <a href="{% url 'interface:welcome' %}"><button type="button" class="btn btn-outline-danger btn-sm">Return</button></a>
     </form>
 
-    <p><a href="{% url 'interface:welcome' %}">Return</a></p>
+    
 
 {% endblock %}
 

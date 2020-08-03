@@ -5,12 +5,49 @@
 {% endblock %}
 
 {% block body %}
-<div class="content_view">
 
-    <div class="title_view"> {{ item.title }} </div>
-    <div class="text_view"> {{ item.text }} </div>    
+{% if user.is_authenticated %}
+    <div class="container">
+        <div class="content_view">
 
-</div>
+            <div class="title_view"><h5> {{ item.title }} </h5></div>
+            <div class="text_view"> {{ item.text }} </div>   
 
-<a href="{% url 'interface:welcome' %}"><button class="btn btn-light">Return</button></a>
+        </div>
+        
+        <div class="content_comments">
+
+            {% for com in comment %}
+
+                <ul class="list-group list_comment">
+                    <li class="list-group-item disabled"><span style="font-weight: bold;">{{ com.user }} </span> - Created at {{ com.created_at }}</li>
+                    <li class="list-group-item">{{ com.text }}</li>
+                </ul>
+
+            {% endfor %}
+
+        </div>
+
+
+        <form class="form_comment" action="" method="post">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+                <textarea name="comment" rows="5" class="form-control"></textarea>
+            </div>
+
+            <a href="#"><button class="btn btn-outline-success btn-sm" type="submit">Comment</button></a>
+            <a href="{% url 'interface:welcome' %}"><button type="button" class="btn btn-outline-dark btn-sm">Return</button></a>
+
+        </form>
+
+        
+    </div>
+   
+
+{% endif %}
+
+
+
 {% endblock %}

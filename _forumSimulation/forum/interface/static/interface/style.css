@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 
 }
 
@@ -15,7 +16,44 @@ a {
     height: 15px;
 }
 
-.img-erase{
+.marker{
+    border: 2px solid red;
+}
+
+.content_view{
+    width: 90%;
+    height: auto;
+    padding-left: 3vh;
+    
+}
+
+.title_view{
+    font-family: 'Press Start 2P', cursive;
+    border-bottom: 2px solid black;
+    
+}
+
+.text_view{
+    background-color: rgb(247, 244, 244);
+    padding: 3vh;
+    text-align: justify;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+
+.form_comment{
+    padding: 2vh;
+    margin-top: 10vh;
+    width: 92%;
 
 }
 
+.content_comments{
+    margin-top: 10vh;
+}
+
+.list_comment{
+    width: 91%;
+    padding: 1vh;
+
+}

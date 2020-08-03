@@ -54,7 +54,17 @@ def erase(request, item_id):
     return redirect('interface:welcome')
 
 def post(request, item_id):
-    item = Posts.objects.get(id=item_id)
-    return render(request, 'interface/view.html', {
-        'item': item
-    })    
+    item = Posts.objects.get(title=item_id)
+
+    if request.method == 'GET':
+        comment = Comment.objects.filter(post=item.title)
+        return render(request, 'interface/view.html', {
+            'item': item,
+            'comment':comment
+        })
+
+    #else:
+
+     #   text_comment = request.POST['comment']
+      #  user = User
+       # new_comment = Comment(user=self.user.id,)

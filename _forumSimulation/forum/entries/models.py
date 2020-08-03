@@ -10,11 +10,17 @@ class Posts(models.Model):
     countUnlike = models.IntegerField(verbose_name='Unlike', default=0)
     created_at = models.DateTimeField(verbose_name='Data de Criação', auto_now_add=True)
 
+    def __str__(self):
+        return f"{ self.title }"
+
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     post = models.ForeignKey(Posts, on_delete=models.CASCADE)
     text = models.TextField()
     created_at = models.DateTimeField(verbose_name='Data de Criação', auto_now_add=True)
+
+    def __str__(self):
+        return f"Comment in post {self.post}"
     
 
 
