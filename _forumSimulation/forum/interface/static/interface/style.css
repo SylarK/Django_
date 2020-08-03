@@ -6,6 +6,16 @@
 
 }
 
-.content_view{
-    
+a {
+    color: black;
 }
+
+.img-edit{
+    width: 15px;
+    height: 15px;
+}
+
+.img-erase{
+
+}
+

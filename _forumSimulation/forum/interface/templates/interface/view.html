@@ -6,9 +6,11 @@
 
 {% block body %}
 <div class="content_view">
-    
-    <div class="title_view">Title </div>
-    <div class="text_view">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci omnis possimus reiciendis hic eum cupiditate alias mollitia eos quia aspernatur non repudiandae assumenda ducimus ab quaerat, repellendus vel veniam sed.</div>    
+
+    <div class="title_view"> {{ item.title }} </div>
+    <div class="text_view"> {{ item.text }} </div>    
 
 </div>
+
+<a href="{% url 'interface:welcome' %}"><button class="btn btn-light">Return</button></a>
 {% endblock %}

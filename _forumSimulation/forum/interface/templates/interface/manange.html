@@ -6,44 +6,48 @@
 
 {% block body %}
 
-    {% if user.is_authenticated %}
+    <div class="container">
+        {% if user.is_authenticated %}
 
-        <h2>Manange page.</h2>
+            <h2>Manange page.</h2>
 
-        {% if list_post %}
-        <table>
-            <tr>
-                <th>Nº</th>
-                <th>User</th>
-                <th>Title</th>
-                <th>Created at</th>
-            </tr>
-            {% for item in list_post %}
+            {% if list_post %}
+            <table class="table">
                 <tr>
-                    <th>{{ item.id }}</th>
-                    <th>{{ item.user }}</th>
-                    <th>{{ item.title }}</th>
-                    <th>{{ item.created_at }}</th>
-                    <th><a href="{% url 'interface:edit' item.id %}">Edit</a></th>
-                    <th><a href="{% url 'interface:erase' item.id %}">Erase</a></th>
+                    <th scope="col">Nº</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Created at</th>
                 </tr>
-            {% endfor %}
-                       
-            
-        </table>
+                {% for item in list_post %}
+                    <tr>
+                        <th>{{ item.id }}</th>
+                        <th>{{ item.user }}</th>
+                        <th>{{ item.title }}</th>
+                        <th>{{ item.created_at }}</th>
+                        <th><a style="text-decoration: none;" href="{% url 'interface:edit' item.id %}"><img class="img-edit" src="../../static/img/edit.svg" alt="">&nbsp; Edit</a></th>
+                        <th><a style="text-decoration: none;" href="{% url 'interface:erase' item.id %}"><img class='img-edit' src="../../static/img/clean.svg" alt=""> Erase</a></th>
+                    </tr>
+                {% endfor %}
+                        
+                
+            </table>
 
-            
+                
 
 
+            {% else %}
+
+            {% endif %}
+        
         {% else %}
 
+            <p> User is not authenticated</p>
+
         {% endif %}
-    
-    {% else %}
 
-        <p> User is not authenticated</p>
+        <a href="{% url 'interface:welcome' %}"><button type="button" class="btn btn-outline-secondary">Return</button></a>
 
-    {% endif %}
+    </div>
 
-    <p><a href="{% url 'interface:welcome' %}">Return</a></p>
 {% endblock %}
