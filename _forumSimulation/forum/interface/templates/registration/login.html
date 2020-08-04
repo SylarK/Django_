@@ -8,7 +8,9 @@
 {% block body %}
 
     {% if form.errors %}
-        <p>Something is wrong with this form.</p>
+        <div class="alert alert-danger" role="alert">
+            Something is wrong with this form.
+        </div>
     {% endif %}
     {% if next %}
         <p>You don't have access for this page.</p>

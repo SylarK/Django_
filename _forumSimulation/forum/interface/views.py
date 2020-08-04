@@ -53,18 +53,27 @@ def erase(request, item_id):
     Posts.objects.filter(id=item_id).delete()
     return redirect('interface:welcome')
 
-def post(request, item_id):
-    item = Posts.objects.get(title=item_id)
+def erase_com(request, comment_id, item_id):
+    Comment.objects.get(id=comment_id).delete()
+    return redirect('interface:post', item_id )
 
+def post(request, item_id):
+    item = Posts.objects.get(id=item_id)
     if request.method == 'GET':
-        comment = Comment.objects.filter(post=item.title)
+        
+        comment = Comment.objects.filter(post=item_id)
         return render(request, 'interface/view.html', {
             'item': item,
             'comment':comment
         })
 
-    #else:
+    else:
 
-     #   text_comment = request.POST['comment']
-      #  user = User
-       # new_comment = Comment(user=self.user.id,)
+       text_comment = request.POST['comment']
+       new_comment = Comment(user=request.user, text=text_comment, post=item )
+       new_comment.save()
+       comment = Comment.objects.filter(post=item_id)
+       return render(request, 'interface/view.html', {
+           'item':item,
+           'comment':comment
+       })
