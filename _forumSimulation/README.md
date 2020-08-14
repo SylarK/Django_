@@ -14,17 +14,17 @@
 
 [x] Layout básico
 
-[ ] Implementação de dados no front
+[x] Implementação de dados no front
 
-[ ] Funcionalidade: Adicionar post, gerenciar post.
+[x] Funcionalidade: Adicionar post, gerenciar post.
 
-[ ] Criação de layout
+[x] Criação de layout
 
-[ ] Redefinição de estilização
+[x] Redefinição de estilização
 
-[ ] Teste do Projeto
+[x] Teste do Projeto
 
-[ ] Projeto Concluído
+[x] Projeto Concluído
 
 
 ##### Controle:
